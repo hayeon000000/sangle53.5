@@ -3,9 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>sangle 53.5기 정기 전시회</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: white;
+        }
+        .poster-container{
+            position: relative;
+            
+        }
+        img.poster{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        p {
+            text-align: center;
+            color: #8aa4d0;
+            padding: 20px 10px;
+        }
+        .side-nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+        }
+
+        .side-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .side-nav li {
+            margin-bottom: 10px;
+        }
+        .side-nav img{
+            width: 10px;
+            height: auto;
+            display: block;
+            transition: opacity 0.2s;
+        }
+        .side-nav img:hover {
+            opacity: 0.7;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-    <p>works</p>
+    <nav class="side-nav">
+        <ul>
+            <li><a href="index.html"><img src="images/back.png" alt="메뉴"></a></li>
+        </ul>
+    </nav>
+    <div class="poster-container">
+        <img src="images/exhibit화면.png" alt="S'angle 53.5기 Flow 포스터" class="poster">
+        <p>2025 S'angle 53.5기 <br> 성신여자대학교 수정캠퍼스 학생회관 304호 <br> instagram: @sswu_s_angle <br> email: sswusangle@gmail.com</p>
+    </div>
 </body>
 </html>
