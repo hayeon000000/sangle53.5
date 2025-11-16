@@ -9,11 +9,26 @@
             margin: 0;
             background-color: white;
         }
-        .poster-container{
+        .workstop-container{
             position: relative;
-            
         }
-        img.poster{
+        img.workstop{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .works-container{
+            position: relative;
+        }
+        img.works{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .worksbottom-container{
+            position: relative;
+        }
+        img.worksbottom{
             width: 100%;
             height: auto;
             display: block;
@@ -37,7 +52,7 @@
 
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
+            align-items: flex-start;
         }
         .side-nav li {
             margin-bottom: 10px;
@@ -52,6 +67,55 @@
             opacity: 0.7;
             cursor: pointer;
         }
+        .nav-button {
+            position: absolute;
+            z-index: 10;
+            cursor: pointer;
+            transition: opacity 0.2s;
+
+            height: auto;
+        }
+        .nav-button:hover{
+            opacity: 0.7;
+        }
+
+        #btn-01 {
+            top: 57.14%;
+            left: 21.8%;
+            width: 7%;
+        }
+        #btn-02 {
+            top: 57.14%;
+            left: 38.4%;
+            width: 7%;
+        }
+        #btn-03 {
+            top: 57.14%;
+            left: 55%;
+            width: 7%;
+        }
+        #btn-04 {
+            top: 57.14%;
+            left: 71.6%;
+            width: 7%;
+        }
+
+        .bottom-nav-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 30px 10px;
+        }
+        .bottom-nav-button {
+            width: auto;
+            height: 15px;
+            margin: 0 20px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .bottom-nav-button:hover {
+            opacity: 0.7;
+        }
     </style>
 </head>
 <body>
@@ -60,9 +124,47 @@
             <li><a href="index.html"><img src="images/back.png" alt="메뉴"></a></li>
         </ul>
     </nav>
-    <div class="poster-container">
-        <img src="images/exhibit화면.png" alt="S'angle 53.5기 Flow 포스터" class="poster">
-        <p>2025 S'angle 53.5기 <br> 성신여자대학교 수정캠퍼스 학생회관 304호 <br> instagram: @sswu_s_angle <br> email: sswusangle@gmail.com</p>
+
+    
+
+    <div class="workstop-container">
+        <img src="images/works-top.png" alt="works-top" class="workstop">
+
+        <div class="works-nav">
+            <img src="images/01 흐름의 시작.png" alt="흐름의 시작" class="nav-button" id="btn-01" data-image="works-01.png">
+            <img src="images/02 시간의 흐름.png" alt="시간의 흐름" class="nav-button" id="btn-02" data-image="works-02.png">
+            <img src="images/03 기억의 흔적.png" alt="기억의 흔적" class="nav-button" id="btn-03" data-image="works-03.png">
+            <img src="images/04 흐름의 계속.png" alt="흐름의 계속" class="nav-button" id="btn-04" data-image="works-04.png">
+        </div>
     </div>
+
+    <div class="works-container">
+        <img src="images/works-01.png" alt="works-01" class="works" id="main-works-image">
+    </div>
+
+    <div class="bottom-nav-container">
+        <img src="images/01.png" alt="01" class="bottom-nav-button" data-image="works-01.png">
+        <img src="images/02.png" alt="02" class="bottom-nav-button" data-image="works-02.png">
+        <img src="images/03.png" alt="03" class="bottom-nav-button" data-image="works-03.png">
+        <img src="images/04.png" alt="04" class="bottom-nav-button" data-image="works-04.png">
+    </div>
+
+    <div class="worksbottom-container">
+        <img src="images/works-bottom.png" alt="works-bottom" class="worksbottom">
+    </div>
+
+    <p>2025 S'angle 53.5기 <br> 성신여자대학교 수정캠퍼스 학생회관 304호 <br> instagram: @sswu_s_angle <br> email: sswusangle@gmail.com</p>
+
+    <script>
+        const mainImage = document.getElementById('main-works-image');
+        const navButtons = document.querySelectorAll('.nav-button, .bottom-nav-button');
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const newImamgeFile = this.dataset.image;
+                mainImage.src = 'images/' + newImamgeFile;
+                mainImage.alt = newImamgeFile.split('.')[0];
+            });
+        });
+    </script>
 </body>
 </html>
